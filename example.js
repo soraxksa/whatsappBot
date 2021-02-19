@@ -13,7 +13,6 @@ const {spawn} = require('child_process');
 const qrcode = require('qrcode-terminal');
 const { Client } = require('whatsapp-web.js');
 const client = new Client();
-const utf8 = require('utf8');
 
 client.on('qr', (qr) => {
 	qrcode.generate(qr, {small: true});
