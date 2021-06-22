@@ -117,14 +117,16 @@ client.on('message_create', async msg => {
 			var val =  eval(command[1]);
 			console.log(val);
 			msg.reply(val);
-		}else if(msg.body.startsWith('#math')){
-			const splitted = msg.body.split("\n") ;
-			const eq = splitted[1] ;
-			const res = eval(eq) ;
-			let chat = await msg.getChat();
-			chat.sendMessage(res.toString());
-		}else(msg.body.startsWith("#"))
+		}else if(msg.body.startsWith("#"))
 			options(msg);
+	}
+
+        if(msg.body.startsWith('#math')){
+		const splitted = msg.body.split("\n") ;
+		const eq = splitted[1] ;
+		const res = eval(eq) ;
+		let chat = await msg.getChat();
+		chat.sendMessage(res.toString());
 	}
 
 	if(msg.body.startsWith("#xo"))
